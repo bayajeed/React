@@ -17,10 +17,10 @@ function ToDoList () {
             return alert("Please enter a task");
         }
         
-        editMode === true ? updateHandler() : createHamdler();
+        editMode === true ? updateHandler() : addTask();
     }
 
-    const createHamdler = () =>{
+    const addTask = () =>{
         const newnote = {
             id: crypto.randomUUID(),  //or// id: Date.now() + "", 
             title: task,
@@ -56,9 +56,9 @@ function ToDoList () {
     }
 
     const editHandler = (task)=> {
-        setTask(task.title)
-        setEditMode(true)
-        setEditableNote(task)
+        setTask(task.title) // input fields a old value chole asbe
+        setEditMode(true) // update mode chalu hobe
+        setEditableNote(task) // value hold kore rakhbe 
     }
     
     return(
