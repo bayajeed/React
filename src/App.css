@@ -40,3 +40,22 @@
 .read-the-docs {
   color: #888;
 }
+
+/* For ToDo List */
+.todo {
+  text-align: center; /* পুরো টুডোলিস্টকে সেন্টার করবে */
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  text-align: center; /* লিস্টের টেক্সটকে সেন্টারে আনবে */
+}
+
+.task-list li {
+  display: flex;
+  justify-content: center; /* টেক্সট ও বাটন সেন্টার করবে */
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}

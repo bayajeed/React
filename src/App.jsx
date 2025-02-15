@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import BioData from './components/BioData';
 import IncDec from './components/incDec';
+import ToDoList from './components/ToDoList';
 
 const bioDataInfo= [
   {
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <>
+      <ToDoList />
       <IncDec />
       {bioDataInfo.map((bioData)=>(
         <BioData
