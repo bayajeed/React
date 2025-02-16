@@ -34,16 +34,19 @@ function ToDoList () {
 
     const updateHandler = (e) => {
 
-        alert("Update your item ");
+        // alert("Update your item ");
+        // const newArr = taskList.map((note)=>{
+        //     if (note.id === editableNote.id){
+        //         return { ...note, title: task}
+        //     }
+        //     return {...note};
+        // });
 
-        const newArr = taskList.map((note)=>{
-            if (note.id === editableNote.id){
-                return { ...note, title: task}
-            }
-            return {...note};
-        });
-
-        setTaskList(newArr);
+        const updateNote = {...editableNote, title: task};
+        // old object is {id: "1", title: "Task 1"} to change title to "Task 2" new object is {id: "1", title: "Task 2"}
+        const removePrevNote = taskList.filter((note)=> note.id !== editableNote.id)
+    
+        setTaskList([updateNote, ...removePrevNote]);
 
         setEditMode(false); // after update logic executed
         setTask('')
@@ -56,9 +59,9 @@ function ToDoList () {
     }
 
     const editHandler = (task)=> {
+        setEditableNote(task) // value hold kore rakhbe 
         setTask(task.title) // input fields a old value chole asbe
         setEditMode(true) // update mode chalu hobe
-        setEditableNote(task) // value hold kore rakhbe 
     }
     
     return(
