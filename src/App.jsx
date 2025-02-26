@@ -24,14 +24,14 @@ const bioDataInfo= [
 ]
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <ToDoList />
       <IncDec />
-      {bioDataInfo.map((bioData)=>(
+      {bioDataInfo.map((bioData, index)=>(
         <BioData
+          key = {index}
           user = {bioData.user}
           email = {bioData.email}
           phone = {bioData.phone}
