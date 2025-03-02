@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <ToDoList />
-      <IncDec />
+      {/* <IncDec />
       {bioDataInfo.map((bioData, index)=>(
         <BioData
           key = {index}
@@ -38,7 +38,7 @@ function App() {
           skills = {bioData.skills}
           interest = {bioData.interest}
         />
-      ))}
+      ))} */}
 
         <hr />
 
