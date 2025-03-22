@@ -1,21 +1,17 @@
-import {useState} from 'react'
-import { NoteFilterOptions } from './NoteFilterOptions';
-import { NoteList } from './NoteList';
+import { useContext } from "react";
+import { NoteContext } from "../contexts/Note";
+import { NoteFilterOptions } from "./NoteFilterOptions";
+import { NoteList } from "./NoteList";
 
 export const NoteSection = (props) => {
-  const [filteredTerm, setFilteredTerm] = useState('all');
-  
-  const propsForNoteList = { ...props, filteredTerm, setFilteredTerm }; 
+  const { filteredTerm, setFilteredTerm } = useContext(NoteContext);
+
+  const propsForNoteList = { ...props, filteredTerm, setFilteredTerm };
   return (
     <>
-        <h3>All Task</h3>
-        < NoteFilterOptions
-        filteredTerm={filteredTerm}
-        setFilteredTerm={setFilteredTerm}     
-        />
-        < NoteList
-        {...propsForNoteList}
-        />
+      <h3>All Task</h3>
+      <NoteFilterOptions />
+      <NoteList {...propsForNoteList} />
     </>
-  )
-}
+  );
+};

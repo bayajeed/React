@@ -1,47 +1,11 @@
 /* eslint-disable react/prop-types */
+import { useContext } from "react";
+import { NoteContext } from "../contexts/Note";
 
-export const NoteList = (props) => {
+export const NoteList = () => {
   // const {filteredTerm, setTask} = props;
-  const {
-    filteredTerm,
-    setTask,
-    taskList,
-    setTaskList,
-    setEditMode,
-    setEditableNote,
-  } = props;
-
-  const filteredNote = taskList.filter((note) => {
-    if (filteredTerm === "completed") {
-      return note.isCompleted === true;
-    } else if (filteredTerm === "uncompleted") {
-      return note.isCompleted === false;
-    } else {
-      return true; // eikhane note use korlam na keno?
-    }
-  });
-
-  const deleteHandler = (id) => {
-    // setTaskList(taskList.filter((task) => task.id !== id));
-    const afterDelete = taskList.filter((note) => note.id !== id); //only delete the item with the id that is passed to the function
-    setTaskList(afterDelete);
-  };
-  const editHandler = (task) => {
-    setEditableNote(task); // value hold kore rakhbe
-    setTask(task.title); // input fields a old value chole asbe
-    setEditMode(true); // update mode chalu hobe
-  };
-  const toggleIsCompletedFlag = (targetedNote) => {
-    // note.isCompleted = !note.isCompleted; // Muted hocche
-
-    const checkArry = taskList.map((note) => {
-      if (note.id === targetedNote.id) {
-        return { ...note, isCompleted: !note.isCompleted }; // isCompleted: True or Fauls
-      }
-      return { ...note };
-    });
-    setTaskList(checkArry);
-  };
+  const { filteredNote, toggleIsCompletedFlag, editHandler, deleteHandler } =
+    useContext(NoteContext);
 
   // const searchedTasks = filteredNote.filter((note) => {
   //   return note.title.toLowerCase().includes(searchTerm.toLowerCase());
