@@ -1,10 +1,12 @@
 import "./App.css";
-import ToDoList from "./components/ToDoList";
+// import ToDoList from "./components/ToDoList";
+import Reducer from "./components/Reducer";
 
 function App() {
   return (
     <>
-      <ToDoList />
+      {/* <ToDoList /> */}
+      <Reducer />
     </>
   );
 }
