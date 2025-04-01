@@ -4,10 +4,13 @@ const counterReducer = (state, action) =>{
     console.log("State" , state)
     console.log("Action", action)
     
-    if(action === "incriment"){
-        return state + 1
-    }else if(action ==="dicriment"){
-        return state - 1
+    switch(action){
+        case "incriment":
+            return state + 2
+        case "dicriment":
+            return state - 3
+        default:
+            return state
     }
 }
 const initialValue = 11;
