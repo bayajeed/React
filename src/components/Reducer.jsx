@@ -1,22 +1,6 @@
 import { useReducer } from "react";
+import { counterReducer } from "./reducers/CounterReducer";
 
-const counterReducer = (state, action) =>{
-    console.log("State" , state)
-    console.log("Action", action)
-    
-    switch(action.type){
-        case "incriment":
-            return state + action.payload;
-        case "dicriment":
-            return state - action.payload;
-        case "mult":
-            return state * action.payload;
-        case "div":
-            return state / action.payload;
-        default:
-            return state
-    }
-}
 const initialValue = 11;
 function Reducer(){
     const [counter, dispatch] = useReducer(counterReducer, initialValue)
